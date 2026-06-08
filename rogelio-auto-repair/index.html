@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rogelio's Auto Repair — Trusted mechanic in San Marcos, CA for over 23 years. Brakes, oil changes, transmission, smog checks, and more. California DMV partner." />
+  <title>Rogelio's Auto Repair | San Marcos, CA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0B1F3A;
+      --navy-mid:    #122B52;
+      --navy-light:  #1A3A6B;
+      --orange:      #F97316;
+      --orange-dark: #C2570A;
+      --orange-light:#FEF3E8;
+      --white:       #FFFFFF;
+      --off-white:   #F8FAFC;
+      --gray-100:    #F1F5F9;
+      --gray-300:    #CBD5E1;
+      --gray-500:    #64748B;
+      --gray-700:    #334155;
+      --gray-900:    #0F172A;
+      --star:        #FBBF24;
+
+      --font: 'Inter', system-ui, sans-serif;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.15);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.2);
+      --transition: 200ms ease;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font); color: var(--gray-900); background: var(--white); line-height: 1.6; }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; border: none; }
+
+    /* ──────────────────────────────────────────
+       NAV
+    ────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--navy);
+      border-bottom: 2px solid var(--orange);
+      height: 64px;
+      display: flex; align-items: center;
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1200px; width: 100%; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 1.1rem; color: var(--white);
+      letter-spacing: -.3px;
+    }
+    .nav-logo svg { color: var(--orange); flex-shrink: 0; }
+    .nav-links {
+      display: flex; align-items: center; gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--gray-300); font-size: .9rem; font-weight: 500;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta {
+      background: var(--orange); color: var(--white);
+      padding: 9px 20px; border-radius: var(--radius-sm);
+      font-weight: 700; font-size: .9rem;
+      transition: background var(--transition), transform var(--transition);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .nav-cta:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+    .hamburger {
+      display: none;
+      background: none; border: none; padding: 6px;
+      color: var(--white); cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: var(--navy-mid);
+      border-bottom: 2px solid var(--orange);
+      padding: 16px 24px 24px;
+      flex-direction: column; gap: 4px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--gray-300); font-size: 1rem; font-weight: 500;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.08);
+      transition: color var(--transition);
+    }
+    .mobile-menu a:last-of-type { border: none; }
+    .mobile-menu a:hover { color: var(--orange); }
+    .mobile-menu-cta {
+      margin-top: 12px;
+      background: var(--orange); color: var(--white);
+      padding: 12px 20px; border-radius: var(--radius-sm);
+      font-weight: 700; text-align: center;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+
+    /* ──────────────────────────────────────────
+       HERO
+    ────────────────────────────────────────── */
+    .hero {
+      min-height: 100dvh;
+      background:
+        linear-gradient(135deg, rgba(11,31,58,.97) 0%, rgba(18,43,82,.92) 60%, rgba(26,58,107,.85) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='rgba(249,115,22,.06)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: cover, 80px 80px;
+      display: flex; align-items: center;
+      padding: 80px 24px 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 70% 50%, rgba(249,115,22,.12) 0%, transparent 60%);
+    }
+    .hero-inner {
+      max-width: 1200px; width: 100%; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(249,115,22,.15); border: 1px solid rgba(249,115,22,.4);
+      color: var(--orange); padding: 6px 14px; border-radius: 100px;
+      font-size: .8rem; font-weight: 600; letter-spacing: .5px;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .hero-badge svg { width: 14px; height: 14px; }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900; color: var(--white);
+      line-height: 1.1; letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--gray-300);
+      line-height: 1.65; margin-bottom: 36px; max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange); color: var(--white);
+      padding: 14px 28px; border-radius: var(--radius-sm);
+      font-weight: 700; font-size: 1rem;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 20px rgba(249,115,22,.35);
+    }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(249,115,22,.45); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      padding: 14px 28px; border-radius: var(--radius-sm);
+      font-weight: 700; font-size: 1rem; border: 2px solid rgba(255,255,255,.3);
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+    .btn-outline:hover { border-color: var(--orange); background: rgba(249,115,22,.08); transform: translateY(-2px); }
+    .hero-stats {
+      display: flex; gap: 32px; margin-top: 48px; flex-wrap: wrap;
+    }
+    .stat { border-left: 3px solid var(--orange); padding-left: 16px; }
+    .stat-num { font-size: 1.8rem; font-weight: 900; color: var(--white); line-height: 1; }
+    .stat-label { font-size: .8rem; color: var(--gray-300); font-weight: 500; margin-top: 4px; }
+
+    .hero-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-card-title {
+      font-size: 1.1rem; font-weight: 700; color: var(--white);
+      margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+    }
+    .hero-card-title svg { color: var(--orange); }
+    .hero-service-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .hero-service-list li {
+      display: flex; align-items: center; gap: 12px;
+      color: var(--gray-300); font-size: .95rem; font-weight: 500;
+    }
+    .check-icon {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(249,115,22,.2); border: 1px solid var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: var(--orange);
+    }
+    .check-icon svg { width: 12px; height: 12px; }
+    .hero-card-divider { border: none; border-top: 1px solid rgba(255,255,255,.1); margin: 24px 0; }
+    .hero-card-hours { color: var(--gray-300); font-size: .9rem; line-height: 1.8; }
+    .hours-label { color: var(--orange); font-weight: 700; font-size: .8rem; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 6px; }
+
+    /* ──────────────────────────────────────────
+       TRUST BAR
+    ────────────────────────────────────────── */
+    .trust-bar {
+      background: var(--orange); padding: 14px 24px;
+    }
+    .trust-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center; gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      color: var(--white); font-weight: 700; font-size: .9rem;
+    }
+    .trust-item svg { width: 18px; height: 18px; opacity: .9; }
+
+    /* ──────────────────────────────────────────
+       SECTION SHARED
+    ────────────────────────────────────────── */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: .8rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 900; color: var(--gray-900);
+      letter-spacing: -1px; line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem; color: var(--gray-500);
+      max-width: 560px; line-height: 1.7;
+    }
+    .section-header { margin-bottom: 52px; }
+
+    /* ──────────────────────────────────────────
+       SERVICES
+    ────────────────────────────────────────── */
+    #services { background: var(--off-white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--orange); }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--orange); opacity: 0; transition: opacity var(--transition);
+    }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: var(--orange-light); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px; color: var(--orange);
+    }
+    .service-icon svg { width: 26px; height: 26px; }
+    .service-name {
+      font-size: 1.15rem; font-weight: 800; color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+    .service-desc { font-size: .9rem; color: var(--gray-500); line-height: 1.6; }
+    .dmv-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 12px; padding: 4px 10px;
+      background: #EFF6FF; border: 1px solid #BFDBFE;
+      border-radius: 100px; font-size: .75rem; font-weight: 700;
+      color: #1D4ED8;
+    }
+    .dmv-badge svg { width: 13px; height: 13px; }
+
+    /* ──────────────────────────────────────────
+       ABOUT
+    ────────────────────────────────────────── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-img-wrap {
+      width: 100%; aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    .about-img-wrap svg {
+      width: 120px; height: 120px; color: rgba(249,115,22,.3);
+    }
+    .about-years-badge {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--orange); color: var(--white);
+      width: 110px; height: 110px; border-radius: 50%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid var(--white);
+    }
+    .about-years-num { font-size: 2.2rem; font-weight: 900; line-height: 1; }
+    .about-years-label { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; opacity: .9; text-align: center; line-height: 1.3; }
+    .about-rating-badge {
+      position: absolute; top: -16px; left: -16px;
+      background: var(--white); border-radius: var(--radius-md);
+      padding: 12px 16px;
+      box-shadow: var(--shadow-md);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .rating-stars { display: flex; gap: 2px; }
+    .rating-stars svg { width: 16px; height: 16px; color: var(--star); }
+    .rating-text { font-size: .85rem; font-weight: 700; color: var(--gray-900); }
+
+    .about-content .section-sub { margin-bottom: 28px; }
+    .about-features { display: flex; flex-direction: column; gap: 18px; margin-bottom: 36px; }
+    .about-feature {
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .about-feature-icon {
+      width: 40px; height: 40px; border-radius: var(--radius-sm);
+      background: var(--orange-light); color: var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .about-feature-icon svg { width: 20px; height: 20px; }
+    .about-feature-text strong { display: block; font-weight: 700; color: var(--gray-900); margin-bottom: 2px; }
+    .about-feature-text span { font-size: .9rem; color: var(--gray-500); }
+
+    /* ──────────────────────────────────────────
+       REVIEWS
+    ────────────────────────────────────────── */
+    #reviews { background: var(--navy); }
+    #reviews .section-title { color: var(--white); }
+    #reviews .section-label { color: var(--orange); }
+    #reviews .section-sub { color: var(--gray-300); }
+    .reviews-summary {
+      display: flex; align-items: center; gap: 32px;
+      margin-bottom: 48px; flex-wrap: wrap;
+    }
+    .reviews-score {
+      text-align: center;
+    }
+    .score-num { font-size: 4rem; font-weight: 900; color: var(--white); line-height: 1; }
+    .score-stars { display: flex; gap: 4px; justify-content: center; margin: 6px 0; }
+    .score-stars svg { width: 22px; height: 22px; color: var(--star); }
+    .score-count { font-size: .85rem; color: var(--gray-300); }
+    .score-divider { width: 1px; height: 70px; background: rgba(255,255,255,.15); }
+    .platform-ratings { display: flex; gap: 24px; flex-wrap: wrap; }
+    .platform-chip {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-md); padding: 12px 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .platform-name { font-size: .85rem; color: var(--gray-300); font-weight: 500; }
+    .platform-score { font-size: 1.2rem; font-weight: 800; color: var(--white); }
+    .platform-stars { display: flex; gap: 2px; }
+    .platform-stars svg { width: 14px; height: 14px; color: var(--star); }
+
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;
+    }
+    .review-card {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-md); padding: 24px;
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .review-card:hover { background: rgba(255,255,255,.08); border-color: rgba(249,115,22,.35); }
+    .review-stars { display: flex; gap: 3px; margin-bottom: 14px; }
+    .review-stars svg { width: 17px; height: 17px; color: var(--star); }
+    .review-text { font-size: .95rem; color: var(--gray-300); line-height: 1.65; font-style: italic; margin-bottom: 18px; }
+    .review-text::before { content: '"'; font-size: 2.5rem; line-height: 0; vertical-align: -.6rem; color: var(--orange); font-style: normal; margin-right: 4px; opacity: .7; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--navy-light); display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .9rem; color: var(--orange); flex-shrink: 0;
+    }
+    .reviewer-name { font-weight: 700; color: var(--white); font-size: .9rem; }
+    .reviewer-meta { font-size: .78rem; color: var(--gray-500); margin-top: 2px; }
+    .review-source {
+      margin-left: auto; font-size: .75rem; font-weight: 600;
+      color: var(--gray-500);
+    }
+
+    /* ──────────────────────────────────────────
+       CONTACT
+    ────────────────────────────────────────── */
+    #contact { background: var(--off-white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .contact-info { display: flex; flex-direction: column; gap: 24px; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .contact-item-icon {
+      width: 48px; height: 48px; border-radius: var(--radius-sm);
+      background: var(--navy); color: var(--orange);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .contact-item-icon svg { width: 22px; height: 22px; }
+    .contact-item-label { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--orange); margin-bottom: 4px; }
+    .contact-item-value { font-size: 1rem; font-weight: 600; color: var(--gray-900); }
+    .contact-item-sub { font-size: .88rem; color: var(--gray-500); margin-top: 2px; }
+
+    .contact-cta-box {
+      background: var(--navy); border-radius: var(--radius-lg);
+      padding: 40px; display: flex; flex-direction: column; align-items: flex-start;
+      gap: 20px; border: 2px solid rgba(249,115,22,.25);
+    }
+    .contact-cta-box h3 { font-size: 1.5rem; font-weight: 800; color: var(--white); line-height: 1.3; }
+    .contact-cta-box p { color: var(--gray-300); font-size: .95rem; line-height: 1.6; }
+    .contact-cta-phone {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--orange); color: var(--white);
+      padding: 14px 24px; border-radius: var(--radius-sm);
+      font-weight: 800; font-size: 1.1rem; width: 100%; justify-content: center;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .contact-cta-phone:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .contact-cta-phone svg { width: 22px; height: 22px; }
+    .contact-hours-grid {
+      width: 100%; background: rgba(255,255,255,.05);
+      border-radius: var(--radius-sm); overflow: hidden;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .hours-row {
+      display: flex; justify-content: space-between;
+      padding: 10px 16px; font-size: .875rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .hours-row:last-child { border: none; }
+    .hours-row .day { color: var(--gray-300); font-weight: 500; }
+    .hours-row .time { font-weight: 700; }
+    .hours-row.open .time { color: var(--orange); }
+    .hours-row.closed .time { color: var(--gray-500); }
+
+    /* ──────────────────────────────────────────
+       FOOTER
+    ────────────────────────────────────────── */
+    footer {
+      background: var(--gray-900); color: var(--gray-300);
+      padding: 28px 24px; text-align: center;
+    }
+    footer .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-logo {
+      font-weight: 800; color: var(--white); font-size: 1rem;
+      display: flex; align-items: center; gap: 8px;
+      justify-content: center; margin-bottom: 10px;
+    }
+    .footer-logo svg { color: var(--orange); }
+    footer p { font-size: .85rem; }
+
+    /* ──────────────────────────────────────────
+       RESPONSIVE
+    ────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-card { max-width: 480px; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-visual { max-width: 440px; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: block; }
+      section { padding: 64px 20px; }
+      .hero { padding-top: 88px; }
+      .hero-stats { gap: 20px; }
+      .trust-bar-inner { gap: 20px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .score-divider { display: none; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+      .about-years-badge { width: 90px; height: 90px; bottom: -14px; right: -14px; }
+      .about-years-num { font-size: 1.8rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" aria-label="Rogelio's Auto Repair – Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        </svg>
+        Rogelio's Auto Repair
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="tel:+14425153898" class="nav-cta" aria-label="Call us at (442) 515-3898">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42C1.62 2.84 2 2.29 2.59 2H5.5a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.91 9.4a16 16 0 0 0 6 6l.87-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        Call Now
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#reviews" onclick="closeMobile()">Reviews</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+    <a href="tel:+14425153898" class="mobile-menu-cta" onclick="closeMobile()" aria-label="Call (442) 515-3898">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42C1.62 2.84 2 2.29 2.59 2H5.5a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.91 9.4a16 16 0 0 0 6 6l.87-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      (442) 515-3898
+    </a>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge" aria-label="Trusted since 2001">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Trusted in San Marcos Since 2001
+          </div>
+          <h1>Your Car Is In<br /><span>Good Hands.</span></h1>
+          <p class="hero-sub">
+            Honest, reliable auto repair from a mechanic your family can count on.
+            Rogelio has been keeping San Marcos drivers safe on the road for over 23 years.
+          </p>
+          <div class="hero-actions">
+            <a href="tel:+14425153898" class="btn-primary" aria-label="Call (442) 515-3898 now">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42C1.62 2.84 2 2.29 2.59 2H5.5a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.91 9.4a16 16 0 0 0 6 6l.87-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              (442) 515-3898
+            </a>
+            <a href="#services" class="btn-outline">
+              View Services
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-num">23+</div>
+              <div class="stat-label">Years in Business</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">4.5★</div>
+              <div class="stat-label">Avg. Star Rating</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">62+</div>
+              <div class="stat-label">Verified Reviews</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card" role="complementary" aria-label="Services and hours">
+          <div class="hero-card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            What We Fix
+          </div>
+          <ul class="hero-service-list">
+            <li>
+              <span class="check-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Brake Repair &amp; Replacement
+            </li>
+            <li>
+              <span class="check-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Oil Changes
+            </li>
+            <li>
+              <span class="check-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Transmission Service
+            </li>
+            <li>
+              <span class="check-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Electrical &amp; Mechanical Repairs
+            </li>
+            <li>
+              <span class="check-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Smog Checks — CA DMV Partner
+            </li>
+          </ul>
+          <hr class="hero-card-divider" />
+          <div class="hero-card-hours">
+            <div class="hours-label">Hours</div>
+            Mon – Sat &nbsp;&nbsp;8:00 AM – 6:00 PM<br />
+            Sunday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closed
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar" role="complementary" aria-label="Trust signals">
+      <div class="trust-bar-inner">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Honest &amp; Transparent Pricing
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+          </svg>
+          California DMV Partner
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Family-Trusted for 23+ Years
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          4.5 Stars — Google &amp; Yelp
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services" aria-labelledby="services-heading">
+      <div class="section-inner">
+        <header class="section-header">
+          <div class="section-label" aria-hidden="true">What We Do</div>
+          <h2 class="section-title" id="services-heading">Full-Service Auto Repair<br />You Can Depend On</h2>
+          <p class="section-sub">From routine maintenance to complex repairs, Rogelio's team handles it all with care and expertise.</p>
+        </header>
+        <div class="services-grid">
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+            </div>
+            <h3 class="service-name">Brake Repair &amp; Replacement</h3>
+            <p class="service-desc">Pads, rotors, calipers, brake fluid flush — we diagnose and fix all brake system issues to keep you stopping safely.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7h18M3 12h18M3 17h18"/><rect x="2" y="4" width="20" height="16" rx="2"/>
+              </svg>
+            </div>
+            <h3 class="service-name">Oil Changes</h3>
+            <p class="service-desc">Conventional, synthetic, and high-mileage oil changes done right — quick turnaround to get you back on the road.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="service-name">Transmission Service</h3>
+            <p class="service-desc">Fluid service, filter replacement, diagnostics, and repair for automatic and manual transmissions.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <h3 class="service-name">Electrical Repairs</h3>
+            <p class="service-desc">Starters, alternators, batteries, wiring issues, and check-engine diagnostics. We track down electrical gremlins fast.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 class="service-name">Mechanical Repairs</h3>
+            <p class="service-desc">Suspension, cooling systems, belts, hoses, steering, and general engine work. No job too big or too small.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3 class="service-name">Smog Checks</h3>
+            <p class="service-desc">Certified smog testing for California DMV registration renewal. In and out fast — we're an official CA DMV partner.</p>
+            <span class="dmv-badge" aria-label="California DMV Partner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+              </svg>
+              Official CA DMV Partner
+            </span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div class="about-visual" aria-hidden="true">
+            <div class="about-img-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <div class="about-years-badge" aria-label="23 years of trusted service">
+              <div class="about-years-num">23</div>
+              <div class="about-years-label">Years of Trust</div>
+            </div>
+            <div class="about-rating-badge">
+              <div class="rating-stars" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" style="clip-path:inset(0 50% 0 0)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="rating-text" aria-label="4.5 stars on Google and Yelp">4.5 Stars — Google &amp; Yelp</span>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <div class="section-label" aria-hidden="true">About Rogelio</div>
+            <h2 class="section-title" id="about-heading">A Mechanic Your Family Can Trust for Life</h2>
+            <p class="section-sub">
+              Rogelio is not just a mechanic — he's a cornerstone of the San Marcos community.
+              Generations of families have trusted him with their vehicles because he always tells you
+              exactly what your car needs, and nothing more.
+            </p>
+            <div class="about-features">
+              <div class="about-feature">
+                <div class="about-feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <div class="about-feature-text">
+                  <strong>Radical Honesty</strong>
+                  <span>No upsells, no scare tactics. Rogelio tells you exactly what's wrong and what it'll cost — upfront.</span>
+                </div>
+              </div>
+              <div class="about-feature">
+                <div class="about-feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <div class="about-feature-text">
+                  <strong>Multi-Generation Loyalty</strong>
+                  <span>Customers who first came to Rogelio 23 years ago still bring their kids' cars today.</span>
+                </div>
+              </div>
+              <div class="about-feature">
+                <div class="about-feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div class="about-feature-text">
+                  <strong>Fair Hours, Fast Turnaround</strong>
+                  <span>Open Monday through Saturday, 8 AM to 6 PM. We respect your time and your schedule.</span>
+                </div>
+              </div>
+            </div>
+            <a href="tel:+14425153898" class="btn-primary" style="display:inline-flex" aria-label="Call Rogelio at (442) 515-3898">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42C1.62 2.84 2 2.29 2.59 2H5.5a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.91 9.4a16 16 0 0 0 6 6l.87-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Call Rogelio Today
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" aria-labelledby="reviews-heading">
+      <div class="section-inner">
+        <header class="section-header">
+          <div class="section-label" aria-hidden="true">Customer Reviews</div>
+          <h2 class="section-title" id="reviews-heading">Don't Take Our Word for It</h2>
+          <p class="section-sub">Over 62 verified reviews across Google and Yelp — here's what the community says.</p>
+        </header>
+
+        <div class="reviews-summary" aria-label="Overall rating summary">
+          <div class="reviews-score">
+            <div class="score-num" aria-label="4.5 out of 5">4.5</div>
+            <div class="score-stars" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="clip-path:inset(0 50% 0 0)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div class="score-count" aria-label="62 total reviews">62 reviews</div>
+          </div>
+          <div class="score-divider" aria-hidden="true"></div>
+          <div class="platform-ratings">
+            <div class="platform-chip" aria-label="Google: 4.5 stars, 30 reviews">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+              <div>
+                <div class="platform-name">Google</div>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="platform-score">4.5</div>
+                  <div class="platform-stars" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="clip-path:inset(0 50% 0 0)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </div>
+                  <span class="platform-name">(30)</span>
+                </div>
+              </div>
+            </div>
+            <div class="platform-chip" aria-label="Yelp: 4.5 stars, 32 reviews">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#FF1A1A" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5c-.17.1-.38.06-.5-.1l-3-4.5c-.12-.18-.07-.42.1-.54l1-.67c.18-.12.42-.07.54.1l2 3 4.5-6c.12-.17.36-.21.53-.09l1 .75c.17.12.21.36.09.53l-5.5 7c-.07.1-.18.15-.29.15-.09 0-.19-.04-.27-.13z"/>
+              </svg>
+              <div>
+                <div class="platform-name">Yelp</div>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="platform-score">4.5</div>
+                  <div class="platform-stars" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="clip-path:inset(0 50% 0 0)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </div>
+                  <span class="platform-name">(32)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="review-text">Rogelio is the best mechanic I have ever met. My family has been going to him for the past 23 years. He's an honest, and sincere man.</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar" aria-hidden="true">M</div>
+              <div>
+                <div class="reviewer-name">Maria G.</div>
+                <div class="reviewer-meta">Long-time customer · San Marcos, CA</div>
+              </div>
+              <span class="review-source">Google</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="review-text">Took my car in for brakes and Rogelio was upfront about every cost. No surprises on the bill. This is the kind of mechanic you keep forever.</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar" aria-hidden="true">D</div>
+              <div>
+                <div class="reviewer-name">David R.</div>
+                <div class="reviewer-meta">Verified customer · San Marcos, CA</div>
+              </div>
+              <span class="review-source">Yelp</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="review-text">Got my smog done here for the last 5 years. Always fast, always fair. Wouldn't go anywhere else for my registration renewal.</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar" aria-hidden="true">L</div>
+              <div>
+                <div class="reviewer-name">Linda T.</div>
+                <div class="reviewer-meta">Verified customer · Escondido, CA</div>
+              </div>
+              <span class="review-source">Google</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="section-inner">
+        <header class="section-header">
+          <div class="section-label" aria-hidden="true">Find Us</div>
+          <h2 class="section-title" id="contact-heading">Come See Us in San Marcos</h2>
+          <p class="section-sub">We're conveniently located on W San Marcos Blvd. Walk-ins welcome.</p>
+        </header>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Address</div>
+                <div class="contact-item-value">755 W San Marcos Blvd, Suite 108</div>
+                <div class="contact-item-sub">San Marcos, CA 92078</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42C1.62 2.84 2 2.29 2.59 2H5.5a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.91 9.4a16 16 0 0 0 6 6l.87-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Phone</div>
+                <a href="tel:+14425153898" class="contact-item-value" style="display:block;transition:color 200ms ease;">
+                  (442) 515-3898
+                </a>
+                <div class="contact-item-sub">Call anytime during business hours</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Hours</div>
+                <div class="contact-item-value">Mon – Sat: 8:00 AM – 6:00 PM</div>
+                <div class="contact-item-sub">Sunday: Closed</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-cta-box">
+            <h3>Ready to Book?<br />Give Us a Call.</h3>
+            <p>No appointment needed for most services. Walk-ins are always welcome. Just give us a ring and we'll take it from there.</p>
+            <a href="tel:+14425153898" class="contact-cta-phone" aria-label="Call (442) 515-3898 to book">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42C1.62 2.84 2 2.29 2.59 2H5.5a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.91 9.4a16 16 0 0 0 6 6l.87-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              (442) 515-3898
+            </a>
+            <div class="contact-hours-grid" aria-label="Weekly hours">
+              <div class="hours-row open"><span class="day">Monday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+              <div class="hours-row open"><span class="day">Tuesday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+              <div class="hours-row open"><span class="day">Wednesday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+              <div class="hours-row open"><span class="day">Thursday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+              <div class="hours-row open"><span class="day">Friday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+              <div class="hours-row open"><span class="day">Saturday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+              <div class="hours-row closed"><span class="day">Sunday</span><span class="time">Closed</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo" aria-label="Rogelio's Auto Repair">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        </svg>
+        Rogelio's Auto Repair
+      </div>
+      <p>755 W San Marcos Blvd, Suite 108, San Marcos, CA 92078 &nbsp;·&nbsp; <a href="tel:+14425153898" style="color:var(--orange)">(442) 515-3898</a> &nbsp;·&nbsp; Mon–Sat 8AM–6PM</p>
+      <p style="margin-top:8px;color:#475569;">&copy; 2025 Rogelio's Auto Repair. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        closeMobile();
+      }
+    });
+
+    // Keyboard: close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobile();
+    });
+  </script>
+</body>
+</html>
