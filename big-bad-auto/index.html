@@ -274,11 +274,20 @@
 <!-- ================================================================
      HERO
 ================================================================ -->
-<section id="home" class="relative min-h-screen flex items-center hero-grid overflow-hidden pt-16" aria-labelledby="hero-heading">
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-16" aria-labelledby="hero-heading">
 
-  <!-- Diagonal red glow overlay -->
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
-       style="background: linear-gradient(135deg, transparent 50%, rgba(220,38,38,.07) 100%)"></div>
+  <!-- Background: real shop photo + layered overlays -->
+  <div class="absolute inset-0" aria-hidden="true">
+    <img src="images/shop-lexus-front.jpg" alt=""
+         class="w-full h-full object-cover object-center"
+         loading="eager" width="556" height="740" />
+    <!-- Dark gradient — heavier on left where text lives, lighter right -->
+    <div class="absolute inset-0" style="background: linear-gradient(110deg, rgba(15,23,42,.97) 0%, rgba(15,23,42,.92) 40%, rgba(15,23,42,.72) 100%)"></div>
+    <!-- Faint red grid texture on top -->
+    <div class="absolute inset-0 hero-grid opacity-25"></div>
+    <!-- Subtle red diagonal glow -->
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, transparent 55%, rgba(220,38,38,.12) 100%)"></div>
+  </div>
 
   <!-- Decorative wheel SVG (right side, large screens) -->
   <div class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 opacity-[.07] hidden xl:block pointer-events-none" aria-hidden="true">
@@ -631,6 +640,68 @@
 
 
 <!-- ================================================================
+     WORK GALLERY
+================================================================ -->
+<section class="py-16 lg:py-20 bg-[#0F172A]" aria-labelledby="gallery-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-10 fade-up">
+      <p class="section-tag mb-3">Real Work. Real Results.</p>
+      <h2 id="gallery-heading" class="font-heading font-bold text-white mb-3" style="font-size:clamp(1.6rem,3.5vw,2.5rem)">FROM THE SHOP</h2>
+      <p class="text-slate-400 text-sm max-w-md mx-auto">Every vehicle gets the same attention to detail — luxury cars, daily drivers, all of it.</p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 fade-up" style="transition-delay:80ms">
+
+      <div class="overflow-hidden rounded-2xl group cursor-default">
+        <img src="images/shop-lexus-rear.jpg"
+             alt="Lexus LC coupe on the lift at Big Bad Auto — rear view"
+             class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+             style="aspect-ratio:3/4"
+             loading="lazy" width="316" height="421" />
+      </div>
+
+      <div class="overflow-hidden rounded-2xl group cursor-default">
+        <img src="images/shop-engine-pull.jpg"
+             alt="V8 engine removed with engine hoist at Big Bad Auto"
+             class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+             style="aspect-ratio:3/4"
+             loading="lazy" width="339" height="452" />
+      </div>
+
+      <div class="overflow-hidden rounded-2xl group cursor-default">
+        <img src="images/shop-brakes.jpg"
+             alt="Brake rotor and suspension components on lift at Big Bad Auto"
+             class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+             style="aspect-ratio:3/4"
+             loading="lazy" width="229" height="305" />
+      </div>
+
+      <div class="overflow-hidden rounded-2xl group cursor-default">
+        <img src="images/shop-cylinder-head.jpg"
+             alt="Cylinder head teardown for engine rebuild at Big Bad Auto"
+             class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+             style="aspect-ratio:3/4"
+             loading="lazy" width="312" height="416" />
+      </div>
+
+    </div>
+
+    <div class="mt-8 text-center fade-up" style="transition-delay:160ms">
+      <p class="text-slate-500 text-sm mb-5">Have a tough job? We've handled tougher.</p>
+      <a href="tel:7606442574" class="btn-primary inline-flex" aria-label="Call Big Bad Auto at (760) 644-2574">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.79h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.4a16 16 0 0 0 6.29 6.29l1.88-1.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        CALL (760) 644-2574
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
      ABOUT
 ================================================================ -->
 <section id="about" class="py-20 lg:py-28" aria-labelledby="about-heading">
@@ -639,55 +710,47 @@
 
       <!-- Visual card -->
       <div class="relative fade-up order-2 lg:order-1">
-        <div class="bg-[#1E293B] border border-slate-700 rounded-2xl p-8 relative overflow-hidden">
 
-          <!-- Top red accent bar -->
-          <div class="absolute top-0 left-8 right-8 h-[3px] bg-red-600 rounded-b" aria-hidden="true"></div>
+        <!-- Hero shop photo -->
+        <div class="overflow-hidden rounded-2xl mb-4" style="aspect-ratio:4/3">
+          <img src="images/shop-lexus-front.jpg"
+               alt="Inside Big Bad Auto — Lexus on the GrandPrix lift"
+               class="w-full h-full object-cover object-center"
+               loading="lazy" width="556" height="417" />
+        </div>
 
-          <!-- Shop header -->
-          <div class="flex items-center gap-4 mb-8">
-            <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-              </svg>
-            </div>
-            <div>
-              <p class="font-heading font-bold text-white text-sm" style="letter-spacing:.15em">BIG BAD AUTO LLC</p>
-              <p class="text-slate-400 text-xs mt-0.5">755 W San Marcos Blvd #106 · San Marcos, CA</p>
-            </div>
-          </div>
+        <!-- Stats strip -->
+        <div class="bg-[#1E293B] border border-slate-700 rounded-2xl p-5 relative">
+          <!-- Red top bar -->
+          <div class="absolute top-0 left-6 right-6 h-[3px] bg-red-600 rounded-b" aria-hidden="true"></div>
 
-          <!-- Stats -->
-          <dl class="grid grid-cols-2 gap-4 mb-8">
-            <div class="bg-[#0F172A] rounded-xl p-4">
-              <dd class="font-heading font-bold text-red-500 text-3xl" aria-label="California Licensed LLC">CA</dd>
-              <dt class="text-slate-400 text-xs mt-1 leading-snug">State Licensed<br>LLC</dt>
+          <dl class="grid grid-cols-4 gap-3 mb-4">
+            <div class="text-center">
+              <dd class="font-heading font-bold text-red-500 text-2xl" aria-label="California LLC">CA</dd>
+              <dt class="text-slate-500 text-xs mt-0.5 leading-snug">Licensed<br>LLC</dt>
             </div>
-            <div class="bg-[#0F172A] rounded-xl p-4">
-              <dd class="font-heading font-bold text-red-500 text-3xl" aria-label="Zero hidden fees">$0</dd>
-              <dt class="text-slate-400 text-xs mt-1 leading-snug">Hidden Fees.<br>Ever.</dt>
+            <div class="text-center">
+              <dd class="font-heading font-bold text-red-500 text-2xl" aria-label="Zero hidden fees">$0</dd>
+              <dt class="text-slate-500 text-xs mt-0.5 leading-snug">Hidden<br>Fees</dt>
             </div>
-            <div class="bg-[#0F172A] rounded-xl p-4">
-              <dd class="font-heading font-bold text-red-500 text-3xl" aria-label="7 plus service specialties">7+</dd>
-              <dt class="text-slate-400 text-xs mt-1 leading-snug">Service<br>Specialties</dt>
+            <div class="text-center">
+              <dd class="font-heading font-bold text-red-500 text-2xl" aria-label="7 plus services">7+</dd>
+              <dt class="text-slate-500 text-xs mt-0.5 leading-snug">Service<br>Types</dt>
             </div>
-            <div class="bg-[#0F172A] rounded-xl p-4">
-              <dd class="font-heading font-bold text-red-500 text-3xl" aria-label="6 days a week">6</dd>
-              <dt class="text-slate-400 text-xs mt-1 leading-snug">Days a Week<br>Open</dt>
+            <div class="text-center">
+              <dd class="font-heading font-bold text-red-500 text-2xl" aria-label="6 days a week">6</dd>
+              <dt class="text-slate-500 text-xs mt-0.5 leading-snug">Days<br>Open</dt>
             </div>
           </dl>
 
-          <!-- Hours summary -->
-          <div class="bg-[#0F172A] rounded-xl p-4 flex items-center gap-3">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
+          <div class="flex items-center gap-2 bg-[#0F172A] rounded-xl px-4 py-3">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
             </svg>
-            <p class="text-slate-300 text-sm">
+            <p class="text-slate-300 text-xs">
               <span class="text-white font-bold">Mon–Fri</span> 9am–5pm &nbsp;·&nbsp; <span class="text-white font-bold">Sat</span> 9am–3pm
             </p>
           </div>
-
         </div>
 
         <!-- Floating badge -->
