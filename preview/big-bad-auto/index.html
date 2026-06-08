@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Big Bad Auto LLC — Honest auto repair in San Marcos, CA. Brakes, diagnostics, transmission, electrical, suspension & more. No hidden fees. (760) 644-2574">
+  <title>Big Bad Auto LLC | Auto Repair in San Marcos, CA</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ink':    '#0F172A',
+            'panel':  '#1E293B',
+            'panel2': '#334155',
+            'red':    '#DC2626',
+            'red2':   '#B91C1C',
+          },
+          fontFamily: {
+            'head': ['Syncopate', 'sans-serif'],
+            'mono': ['"Space Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html  { scroll-behavior: smooth; }
+    body  { font-family: 'Space Mono', monospace; background: #0F172A; color: #fff; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html  { scroll-behavior: auto; }
+      .anim-pulse  { animation: none !important; }
+      .anim-bounce { animation: none !important; }
+      .service-card { transition: none !important; }
+    }
+
+    /* ---- NAV ---- */
+    #navbar { transition: background 0.25s ease, box-shadow 0.25s ease; }
+    #navbar.scrolled {
+      background: rgba(15,23,42,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(220,38,38,.25);
+    }
+
+    /* ---- HERO BG ---- */
+    .hero-grid {
+      background-color: #0F172A;
+      background-image:
+        repeating-linear-gradient(0deg,  transparent, transparent 39px, rgba(255,255,255,.025) 39px, rgba(255,255,255,.025) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,.025) 39px, rgba(255,255,255,.025) 40px);
+    }
+
+    /* ---- ACCENT LINE ---- */
+    .bar { width: 48px; height: 4px; background: #DC2626; }
+
+    /* ---- SERVICE CARDS ---- */
+    .service-card {
+      transition: transform .18s ease, border-color .18s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: #DC2626 !important;
+    }
+
+    /* ---- FOCUS ---- */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #DC2626;
+      outline-offset: 3px;
+    }
+
+    /* ---- SKIP LINK ---- */
+    .skip-link {
+      position: absolute;
+      top: -9999px;
+      left: 1rem;
+      background: #DC2626;
+      color: #fff;
+      padding: .5rem 1rem;
+      font-family: 'Space Mono', monospace;
+      font-size: .75rem;
+      z-index: 9999;
+    }
+    .skip-link:focus { top: 1rem; }
+  </style>
+</head>
+<body>
+
+<!-- Skip nav for keyboard/screen-reader users -->
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ============================================================
+     STICKY NAVIGATION
+============================================================ -->
+<nav id="navbar" aria-label="Main navigation"
+     class="fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group" aria-label="Big Bad Auto LLC — home">
+        <div class="w-10 h-10 bg-red flex items-center justify-center flex-shrink-0" aria-hidden="true">
+          <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 19L5.5 5H9.5L11.5 11.5L13 5H17L22.5 19H18.5L17.5 16H9L8 19H1Z" fill="white"/>
+            <path d="M9.5 13H17L13 5L9.5 13Z" fill="#DC2626"/>
+          </svg>
+        </div>
+        <div class="leading-none">
+          <div class="font-head font-bold text-white text-xs sm:text-sm tracking-widest">BIG BAD AUTO</div>
+          <div class="text-[10px] text-slate-400 font-mono tracking-widest uppercase mt-0.5">San Marcos, CA</div>
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0" role="list">
+        <li><a href="#services" class="text-slate-400 hover:text-white text-xs font-mono tracking-widest uppercase transition-colors duration-150">Services</a></li>
+        <li><a href="#why-us"   class="text-slate-400 hover:text-white text-xs font-mono tracking-widest uppercase transition-colors duration-150">Why Us</a></li>
+        <li><a href="#hours"    class="text-slate-400 hover:text-white text-xs font-mono tracking-widest uppercase transition-colors duration-150">Hours</a></li>
+        <li><a href="#contact"  class="text-slate-400 hover:text-white text-xs font-mono tracking-widest uppercase transition-colors duration-150">Contact</a></li>
+      </ul>
+
+      <!-- Right actions -->
+      <div class="flex items-center gap-3">
+        <a href="tel:7606442574"
+           class="hidden sm:inline-flex items-center gap-2 bg-red hover:bg-red2 text-white font-mono font-bold text-xs px-4 py-2.5 transition-colors duration-150"
+           aria-label="Call Big Bad Auto at (760) 644-2574">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/>
+          </svg>
+          (760) 644-2574
+        </a>
+
+        <!-- Hamburger -->
+        <button id="menu-btn" type="button"
+                class="md:hidden p-2 text-slate-400 hover:text-white transition-colors duration-150"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="icon-open"  width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="2" y1="5"  x2="20" y2="5"/>
+            <line x1="2" y1="11" x2="20" y2="11"/>
+            <line x1="2" y1="17" x2="20" y2="17"/>
+          </svg>
+          <svg id="icon-close" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hidden" aria-hidden="true">
+            <line x1="4" y1="4" x2="18" y2="18"/>
+            <line x1="18" y1="4" x2="4" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-panel border-t border-slate-700">
+    <ul class="px-4 py-5 flex flex-col gap-4 list-none m-0 p-4" role="list">
+      <li><a href="#services" class="block text-slate-300 hover:text-white text-sm font-mono tracking-widest uppercase transition-colors" onclick="closeMenu()">Services</a></li>
+      <li><a href="#why-us"   class="block text-slate-300 hover:text-white text-sm font-mono tracking-widest uppercase transition-colors" onclick="closeMenu()">Why Us</a></li>
+      <li><a href="#hours"    class="block text-slate-300 hover:text-white text-sm font-mono tracking-widest uppercase transition-colors" onclick="closeMenu()">Hours</a></li>
+      <li><a href="#contact"  class="block text-slate-300 hover:text-white text-sm font-mono tracking-widest uppercase transition-colors" onclick="closeMenu()">Contact</a></li>
+      <li>
+        <a href="tel:7606442574"
+           class="flex items-center justify-center gap-2 bg-red text-white font-mono font-bold text-sm px-4 py-3 transition-colors duration-150 hover:bg-red2"
+           onclick="closeMenu()">
+          CALL (760) 644-2574
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<main id="main">
+<section class="hero-grid min-h-screen flex items-center pt-16 md:pt-20 relative overflow-hidden">
+  <!-- Ambient blobs -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-red/5"></div>
+    <div class="absolute bottom-0 -left-24 w-72 h-72 rounded-full bg-red/5"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="max-w-3xl">
+
+      <!-- Live badge -->
+      <div class="inline-flex items-center gap-2 bg-red/10 border border-red/30 px-3 py-1.5 mb-8">
+        <span class="anim-pulse inline-block w-2 h-2 rounded-full bg-red-500 animate-pulse" aria-hidden="true"></span>
+        <span class="text-red-400 text-xs font-mono tracking-widest uppercase">San Marcos, CA · Est. 2025</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-head font-bold leading-tight mb-6">
+        <span class="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white">YOUR CAR.</span>
+        <span class="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-red-500">OUR EXPERTISE.</span>
+        <span class="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white">NO SURPRISES.</span>
+      </h1>
+
+      <p class="text-slate-300 text-sm md:text-base font-mono leading-relaxed mb-10 max-w-xl">
+        Family-owned auto repair in San Marcos. We tell you exactly what's wrong, what it'll cost, and what it'll take — before we turn a single wrench.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="tel:7606442574"
+           class="inline-flex items-center justify-center gap-3 bg-red hover:bg-red2 text-white font-head font-bold text-sm px-8 py-4 transition-colors duration-150"
+           aria-label="Call Big Bad Auto at (760) 644-2574">
+          <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/>
+          </svg>
+          CALL NOW — (760) 644-2574
+        </a>
+        <a href="#services"
+           class="inline-flex items-center justify-center gap-2 border border-slate-600 hover:border-red hover:text-red-400 text-slate-300 font-mono text-sm px-8 py-4 transition-colors duration-150">
+          VIEW OUR SERVICES
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 7.5h11M9 3.5l4 4-4 4"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Trust strip -->
+      <div class="flex flex-wrap gap-6 mt-12 pt-8 border-t border-slate-800" aria-label="Trust indicators">
+        <div class="flex items-center gap-2">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="#DC2626" aria-hidden="true">
+            <path d="M9 1l2.163 5.012L16.5 6.726l-3.75 3.66.885 5.364L9 13.2l-4.635 2.55.885-5.364L1.5 6.726l5.337-.714L9 1z"/>
+          </svg>
+          <span class="text-slate-400 text-xs font-mono">5-Star Google Rated</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 2L2.5 6.5V12c0 3 2.5 5.5 6.5 6.5 4-1 6.5-3.5 6.5-6.5V6.5L9 2z"/>
+            <path d="M6 9l2 2 4-4"/>
+          </svg>
+          <span class="text-slate-400 text-xs font-mono">No Hidden Fees</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <circle cx="9" cy="9" r="7"/>
+            <path d="M9 5v4l2.5 2.5"/>
+          </svg>
+          <span class="text-slate-400 text-xs font-mono">Family-Owned Since 2025</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <rect x="2" y="3" width="14" height="12" rx="1.5"/>
+            <path d="M6 3V1M12 3V1M2 7h14"/>
+          </svg>
+          <span class="text-slate-400 text-xs font-mono">CA LLC #B20250201601</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="anim-bounce absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 animate-bounce" aria-hidden="true">
+    <span class="text-slate-600 text-[10px] font-mono tracking-widest">SCROLL</span>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round">
+      <path d="M7 2v10M3 8l4 4 4-4"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section id="services" class="bg-panel py-20 scroll-mt-20" aria-labelledby="services-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-12">
+      <div class="bar mb-4" aria-hidden="true"></div>
+      <h2 id="services-heading" class="font-head font-bold text-white text-2xl sm:text-3xl md:text-4xl mb-3">WHAT WE FIX</h2>
+      <p class="text-slate-400 font-mono text-sm max-w-lg leading-relaxed">
+        From routine maintenance to serious repairs — we cover it all and always explain what's going on before work begins.
+      </p>
+    </div>
+
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none m-0 p-0" role="list">
+
+      <!-- Brakes -->
+      <li class="service-card bg-ink border border-slate-700 p-6">
+        <div class="w-12 h-12 flex items-center justify-center bg-red/10 border border-red/20 mb-5" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="3"/>
+            <line x1="12" y1="3"  x2="12" y2="6"/>
+            <line x1="12" y1="18" x2="12" y2="21"/>
+            <line x1="3"  y1="12" x2="6"  y2="12"/>
+            <line x1="18" y1="12" x2="21" y2="12"/>
+            <line x1="5.636" y1="5.636" x2="7.757" y2="7.757"/>
+            <line x1="16.243" y1="16.243" x2="18.364" y2="18.364"/>
+            <line x1="5.636" y1="18.364" x2="7.757" y2="16.243"/>
+            <line x1="16.243" y1="7.757" x2="18.364" y2="5.636"/>
+          </svg>
+        </div>
+        <h3 class="font-head font-bold text-white text-xs tracking-wider mb-2">BRAKES</h3>
+        <p class="text-slate-400 text-xs font-mono leading-relaxed">Pads, rotors, calipers, and fluid — complete brake service.</p>
+      </li>
+
+      <!-- Diagnostics -->
+      <li class="service-card bg-ink border border-slate-700 p-6">
+        <div class="w-12 h-12 flex items-center justify-center bg-red/10 border border-red/20 mb-5" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+            <polyline points="7 8 9 8 11 13 13 5 15 10 17 10"/>
+          </svg>
+        </div>
+        <h3 class="font-head font-bold text-white text-xs tracking-wider mb-2">DIAGNOSTICS</h3>
+        <p class="text-slate-400 text-xs font-mono leading-relaxed">Check engine lights, OBD scans, and full system analysis.</p>
+      </li>
+
+      <!-- Transmission -->
+      <li class="service-card bg-ink border border-slate-700 p-6">
+        <div class="w-12 h-12 flex items-center justify-center bg-red/10 border border-red/20 mb-5" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            <circle cx="12" cy="12" r="7"/>
+          </svg>
+        </div>
+        <h3 class="font-head font-bold text-white text-xs tracking-wider mb-2">TRANSMISSION</h3>
+        <p class="text-slate-400 text-xs font-mono leading-relaxed">Service, repair, and fluid exchange for auto &amp; manual trans.</p>
+      </li>
+
+      <!-- Oil Leak -->
+      <li class="service-card bg-ink border border-slate-700 p-6">
+        <div class="w-12 h-12 flex items-center justify-center bg-red/10 border border-red/20 mb-5" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C12 2 5 9 5 14.5a7 7 0 0 0 14 0C19 9 12 2 12 2z"/>
+            <path d="M9.5 16a3.5 3.5 0 0 0 3 2"/>
+          </svg>
+        </div>
+        <h3 class="font-head font-bold text-white text-xs tracking-wider mb-2">OIL LEAK REPAIR</h3>
+        <p class="text-slate-400 text-xs font-mono leading-relaxed">Source identification and permanent leak repair — done right.</p>
+      </li>
+
+      <!-- Electrical -->
+      <li class="service-card bg-ink border border-slate-700 p-6">
+        <div class="w-12 h-12 flex items-center justify-center bg-red/10 border border-red/20 mb-5" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <h3 class="font-head font-bold text-white text-xs tracking-wider mb-2">ELECTRICAL</h3>
+        <p class="text-slate-400 text-xs font-mono leading-relaxed">Batteries, alternators, wiring, and complex fault diagnosis.</p>
+      </li>
+
+      <!-- Suspension -->
+      <li class="service-card bg-ink border border-slate-700 p-6">
+        <div class="w-12 h-12 flex items-center justify-center bg-red/10 border border-red/20 mb-5" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="5"  cy="19" r="2.5"/>
+            <circle cx="19" cy="19" r="2.5"/>
+            <path d="M5 16.5V10l3-7h8l3 7v6.5"/>
+            <path d="M9 3l-1 7h8l-1-7"/>
+          </svg>
+        </div>
+        <h3 class="font-head font-bold text-white text-xs tracking-wider mb-2">SUSPENSION</h3>
+        <p class="text-slate-400 text-xs font-mono leading-relaxed">Full inspection plus shocks, struts, and control arm repair.</p>
+      </li>
+
+      <!-- General Repair -->
+      <li class="service-card bg-ink border border-slate-700 p-6">
+        <div class="w-12 h-12 flex items-center justify-center bg-red/10 border border-red/20 mb-5" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z"/>
+          </svg>
+        </div>
+        <h3 class="font-head font-bold text-white text-xs tracking-wider mb-2">GENERAL REPAIR</h3>
+        <p class="text-slate-400 text-xs font-mono leading-relaxed">Whatever the issue — if it's your car, we'll figure it out.</p>
+      </li>
+
+      <!-- CTA card -->
+      <li class="service-card bg-red border border-red/80 p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="font-head font-bold text-white text-xs tracking-wider mb-3">NOT SURE WHAT'S WRONG?</h3>
+          <p class="text-red-100 text-xs font-mono leading-relaxed">
+            Bring it in. We'll run a full diagnostic and explain exactly what we find — no pressure.
+          </p>
+        </div>
+        <a href="tel:7606442574"
+           class="mt-6 inline-flex items-center gap-2 bg-white text-red font-mono font-bold text-xs px-4 py-3 hover:bg-slate-100 transition-colors duration-150 w-fit"
+           aria-label="Call us at (760) 644-2574">
+          CALL US NOW
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M1.5 6.5h10M8 2.5l4 4-4 4"/>
+          </svg>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WHY CHOOSE US
+============================================================ -->
+<section id="why-us" class="bg-ink py-20 scroll-mt-20" aria-labelledby="why-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+      <!-- Left -->
+      <div>
+        <div class="bar mb-4" aria-hidden="true"></div>
+        <h2 id="why-heading" class="font-head font-bold text-white text-2xl sm:text-3xl md:text-4xl mb-6">WHY BRING YOUR CAR TO US</h2>
+        <p class="text-slate-300 font-mono text-sm leading-relaxed mb-10">
+          Alex and Jose built Big Bad Auto on one principle: treat customers exactly how you'd want to be treated when your car breaks down. No runaround, no surprise charges, no condescension. Just honest, skilled work.
+        </p>
+
+        <ul class="space-y-7 list-none m-0 p-0" role="list">
+
+          <li class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center bg-red/10 border border-red/30" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 2L3 7v5c0 3 2.5 5.5 7 7 4.5-1.5 7-4 7-7V7l-7-5z"/>
+                <path d="M7 10l2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-head font-bold text-white text-xs tracking-wider mb-1.5">NO HIDDEN FEES — EVER</h3>
+              <p class="text-slate-400 text-xs font-mono leading-relaxed">You'll receive a full, itemized estimate before any work starts. We don't add charges without your approval.</p>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center bg-red/10 border border-red/30" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round">
+                <path d="M10 3a7 7 0 1 1 0 14A7 7 0 0 1 10 3z"/>
+                <path d="M10 6v4l3 2"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-head font-bold text-white text-xs tracking-wider mb-1.5">TRANSPARENT COMMUNICATION</h3>
+              <p class="text-slate-400 text-xs font-mono leading-relaxed">We speak plain English, not mechanic jargon. You'll know exactly what's happening with your car at every step.</p>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center bg-red/10 border border-red/30" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                <path d="M3 18v-1a5 5 0 0 1 5-5h2"/>
+                <path d="M15 12l1.5 1.5L19 11"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-head font-bold text-white text-xs tracking-wider mb-1.5">FAMILY-OWNED &amp; OPERATED</h3>
+              <p class="text-slate-400 text-xs font-mono leading-relaxed">Alex and Jose are in the shop every day. Your car is in real, accountable hands — not shuffled to whoever's available.</p>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center bg-red/10 border border-red/30" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 5.5h14M5 5.5V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v1.5"/>
+                <rect x="3" y="5.5" width="14" height="12" rx="1"/>
+                <path d="M8 11h4M8 14h4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-head font-bold text-white text-xs tracking-wider mb-1.5">REGISTERED CALIFORNIA LLC</h3>
+              <p class="text-slate-400 text-xs font-mono leading-relaxed">Licensed, registered, and accountable. California LLC #B20250201601 — a real business standing behind their work.</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Right: stats -->
+      <div class="space-y-4">
+        <div class="bg-panel border border-slate-700 p-8">
+          <div class="font-head font-bold text-red-500 text-5xl sm:text-6xl mb-2" aria-label="100 percent">100%</div>
+          <p class="text-white font-mono text-sm mb-4">Transparent estimates before we start any work</p>
+          <div class="w-full h-px bg-slate-700 my-5" aria-hidden="true"></div>
+          <p class="text-slate-400 text-xs font-mono leading-relaxed">
+            Every job starts with a clear breakdown of what's wrong and what it'll cost. You authorize the work. We do it. That's the whole deal.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-panel border border-slate-700 p-6">
+            <div class="font-head font-bold text-red-500 text-4xl mb-1" aria-label="7 plus">7+</div>
+            <p class="text-slate-300 font-mono text-xs leading-snug">Service types covered under one roof</p>
+          </div>
+          <div class="bg-panel border border-slate-700 p-6">
+            <div class="font-head font-bold text-red-500 text-4xl mb-1">5★</div>
+            <p class="text-slate-300 font-mono text-xs leading-snug">Rated on Google by real local customers</p>
+          </div>
+        </div>
+
+        <div class="bg-red p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <div class="font-head font-bold text-white text-xs tracking-wider mb-1">READY TO BRING YOUR CAR IN?</div>
+            <div class="text-red-100 font-mono text-xs">Mon–Fri 9–5, Saturday 9–3</div>
+          </div>
+          <a href="tel:7606442574"
+             class="flex-shrink-0 bg-white text-red font-mono font-bold text-xs px-5 py-3 hover:bg-slate-100 transition-colors duration-150 whitespace-nowrap"
+             aria-label="Call Big Bad Auto at (760) 644-2574">
+            CALL NOW
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     HOURS & LOCATION
+============================================================ -->
+<section id="hours" class="bg-panel py-20 scroll-mt-20" aria-labelledby="hours-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-12">
+      <div class="bar mb-4" aria-hidden="true"></div>
+      <h2 id="hours-heading" class="font-head font-bold text-white text-2xl sm:text-3xl md:text-4xl">FIND US</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- Hours table -->
+      <div class="bg-ink border border-slate-700 p-8">
+        <div class="flex items-center gap-3 mb-7">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <circle cx="10" cy="10" r="8"/>
+            <path d="M10 5v5l3 2.5"/>
+          </svg>
+          <h3 class="font-head font-bold text-white text-xs tracking-wider">BUSINESS HOURS</h3>
+        </div>
+
+        <table class="w-full" aria-label="Business hours">
+          <tbody class="divide-y divide-slate-800">
+            <tr>
+              <td class="py-3 text-slate-300 font-mono text-sm pr-4">Monday</td>
+              <td class="py-3 text-white font-mono text-sm font-bold text-right">9:00 AM – 5:00 PM</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-slate-300 font-mono text-sm pr-4">Tuesday</td>
+              <td class="py-3 text-white font-mono text-sm font-bold text-right">9:00 AM – 5:00 PM</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-slate-300 font-mono text-sm pr-4">Wednesday</td>
+              <td class="py-3 text-white font-mono text-sm font-bold text-right">9:00 AM – 5:00 PM</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-slate-300 font-mono text-sm pr-4">Thursday</td>
+              <td class="py-3 text-white font-mono text-sm font-bold text-right">9:00 AM – 5:00 PM</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-slate-300 font-mono text-sm pr-4">Friday</td>
+              <td class="py-3 text-white font-mono text-sm font-bold text-right">9:00 AM – 5:00 PM</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-slate-300 font-mono text-sm pr-4">Saturday</td>
+              <td class="py-3 text-red-400 font-mono text-sm font-bold text-right">9:00 AM – 3:00 PM</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-slate-600 font-mono text-sm pr-4">Sunday</td>
+              <td class="py-3 text-slate-600 font-mono text-sm text-right">Closed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Address + phone -->
+      <div class="flex flex-col gap-4">
+
+        <div class="bg-ink border border-slate-700 p-8 flex-1">
+          <div class="flex items-center gap-3 mb-6">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 2a6 6 0 0 1 6 6c0 4.5-6 11-6 11S4 12.5 4 8a6 6 0 0 1 6-6z"/>
+              <circle cx="10" cy="8" r="2"/>
+            </svg>
+            <h3 class="font-head font-bold text-white text-xs tracking-wider">ADDRESS</h3>
+          </div>
+          <address class="not-italic text-slate-300 font-mono text-sm leading-relaxed mb-6">
+            755 W San Marcos Blvd, Suite 106<br>
+            San Marcos, CA 92078
+          </address>
+          <a href="https://maps.google.com/?q=755+W+San+Marcos+Blvd+Suite+106+San+Marcos+CA+92078"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-slate-600 hover:border-red hover:text-red-400 text-slate-300 font-mono text-xs px-4 py-3 transition-colors duration-150"
+             aria-label="Open Big Bad Auto on Google Maps (opens in new tab)">
+            OPEN IN GOOGLE MAPS
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M1 10L10 1M10 1H4M10 1v6"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="bg-ink border border-slate-700 p-8">
+          <div class="flex items-center gap-3 mb-5">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/>
+            </svg>
+            <h3 class="font-head font-bold text-white text-xs tracking-wider">CALL US</h3>
+          </div>
+          <a href="tel:7606442574"
+             class="font-head font-bold text-white text-3xl hover:text-red-400 transition-colors duration-150 block mb-2"
+             aria-label="Call Big Bad Auto at (760) 644-2574">
+            (760) 644-2574
+          </a>
+          <p class="text-slate-500 font-mono text-xs">Give us a call — we'll talk you through it, no commitment required.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT CTA
+============================================================ -->
+<section id="contact" class="bg-ink py-24 scroll-mt-20" aria-labelledby="contact-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="bar mx-auto mb-8" aria-hidden="true"></div>
+    <h2 id="contact-heading" class="font-head font-bold text-white text-3xl sm:text-4xl md:text-5xl mb-5 leading-tight">
+      READY TO GET<br class="hidden sm:inline"> YOUR CAR FIXED?
+    </h2>
+    <p class="text-slate-400 font-mono text-sm max-w-md mx-auto mb-10 leading-relaxed">
+      Give us a call or stop by the shop at 755 W San Marcos Blvd. No appointment needed — though calling ahead helps us get you in faster.
+    </p>
+    <a href="tel:7606442574"
+       class="inline-flex items-center gap-3 bg-red hover:bg-red2 text-white font-head font-bold text-base sm:text-lg px-10 py-5 transition-colors duration-150"
+       aria-label="Call Big Bad Auto at (760) 644-2574">
+      <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/>
+      </svg>
+      (760) 644-2574
+    </a>
+    <p class="mt-4 text-slate-600 font-mono text-xs">Mon–Fri 9am–5pm · Sat 9am–3pm · San Marcos, CA</p>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="bg-panel border-t border-slate-700" aria-label="Site footer">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10 mb-10">
+
+      <!-- Brand -->
+      <div>
+        <div class="font-head font-bold text-white text-sm tracking-widest mb-3">BIG BAD AUTO LLC</div>
+        <p class="text-slate-400 font-mono text-xs leading-relaxed">
+          Honest auto repair in San Marcos, CA.<br>
+          No hidden fees. No surprises.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <nav aria-label="Footer navigation">
+        <div class="font-head font-bold text-slate-500 text-[10px] tracking-widest uppercase mb-4">Navigation</div>
+        <ul class="space-y-2.5 list-none m-0 p-0" role="list">
+          <li><a href="#services" class="text-slate-400 hover:text-white font-mono text-xs transition-colors duration-150">Services</a></li>
+          <li><a href="#why-us"   class="text-slate-400 hover:text-white font-mono text-xs transition-colors duration-150">Why Choose Us</a></li>
+          <li><a href="#hours"    class="text-slate-400 hover:text-white font-mono text-xs transition-colors duration-150">Hours &amp; Location</a></li>
+          <li><a href="tel:7606442574" class="text-slate-400 hover:text-white font-mono text-xs transition-colors duration-150">Call Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Contact -->
+      <div>
+        <div class="font-head font-bold text-slate-500 text-[10px] tracking-widest uppercase mb-4">Contact</div>
+        <address class="not-italic space-y-2">
+          <div>
+            <a href="tel:7606442574" class="text-slate-300 hover:text-white font-mono text-xs transition-colors duration-150">(760) 644-2574</a>
+          </div>
+          <div class="text-slate-400 font-mono text-xs">755 W San Marcos Blvd, #106</div>
+          <div class="text-slate-400 font-mono text-xs">San Marcos, CA 92078</div>
+          <div class="text-slate-500 font-mono text-xs pt-1">Mon–Fri: 9am – 5pm<br>Saturday: 9am – 3pm</div>
+        </address>
+      </div>
+
+    </div>
+
+    <div class="border-t border-slate-700 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <p class="text-slate-600 font-mono text-xs text-center sm:text-left">
+        &copy; 2025 Big Bad Auto LLC · California LLC #B20250201601 · All rights reserved.
+      </p>
+      <p class="text-slate-700 font-mono text-xs">bigbadautollc.com</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  // Scroll-activated nav
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Mobile menu
+  const menuBtn  = document.getElementById('menu-btn');
+  const mobileMenu  = document.getElementById('mobile-menu');
+  const iconOpen  = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  function openMenu() {
+    mobileMenu.classList.remove('hidden');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    iconOpen.classList.add('hidden');
+    iconClose.classList.remove('hidden');
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.add('hidden');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+  }
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.contains('hidden') ? openMenu() : closeMenu();
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target)) closeMenu();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+</script>
+
+</body>
+</html>
