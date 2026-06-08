@@ -37,6 +37,7 @@
       background-color: #0F172A;
       color: #F1F5F9;
       -webkit-font-smoothing: antialiased;
+      padding-bottom: 56px; /* reserve space for sticky contact bar */
     }
     h1, h2, h3, h4, .font-heading { font-family: 'Syncopate', sans-serif; }
 
@@ -996,6 +997,52 @@
 
   </div>
 </footer>
+
+
+<!-- ================================================================
+     STICKY CONTACT BAR
+================================================================ -->
+<div id="sticky-bar"
+     class="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-700"
+     style="background:rgba(15,23,42,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)"
+     role="complementary"
+     aria-label="Contact information">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between gap-4 h-14">
+
+      <!-- Left: address + hours (desktop only) -->
+      <div class="hidden md:flex items-center gap-6 text-xs text-slate-400 min-w-0">
+        <span class="flex items-center gap-1.5 truncate">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          755 W San Marcos Blvd #106, San Marcos, CA
+        </span>
+        <span class="text-slate-600">·</span>
+        <span class="flex items-center gap-1.5 whitespace-nowrap">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Mon–Fri 9am–5pm &nbsp;·&nbsp; Sat 9am–3pm
+        </span>
+      </div>
+
+      <!-- Mobile: shop name -->
+      <p class="md:hidden font-heading font-bold text-white text-xs tracking-widest">BIG BAD AUTO</p>
+
+      <!-- Right: call CTA (always visible) -->
+      <a href="tel:7606442574"
+         class="btn-primary py-2.5 px-5 text-xs flex-shrink-0"
+         aria-label="Call Big Bad Auto at (760) 644-2574">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.79h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.4a16 16 0 0 0 6.29 6.29l1.88-1.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        (760) 644-2574
+      </a>
+
+    </div>
+  </div>
+</div>
 
 
 <!-- ================================================================
