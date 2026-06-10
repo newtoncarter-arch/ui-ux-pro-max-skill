@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Best Life Steps — North County San Diego</title>
+  <meta name="description" content="Executive functioning tutoring, social skills coaching, life skills development, and family consultation for adolescents and adults in North County San Diego." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --blue-deep:   #1a4f8c;
+      --blue-mid:    #2563eb;
+      --blue-light:  #eff6ff;
+      --amber:       #f59e0b;
+      --amber-light: #fffbeb;
+      --amber-hover: #d97706;
+    }
+    body { font-family: 'Noto Sans', sans-serif; color: #1e293b; }
+    h1, h2, h3, h4 { font-family: 'Figtree', sans-serif; }
+
+    .nav-link { color: #cbd5e1; transition: color 0.2s; font-weight: 500; font-size: 0.95rem; }
+    .nav-link:hover, .nav-link.active { color: #fbbf24; }
+
+    .btn-primary { background: var(--amber); color: #1e293b; font-family: 'Figtree',sans-serif; font-weight: 700; padding: 0.75rem 1.75rem; border-radius: 0.5rem; display: inline-block; transition: background 0.2s, transform 0.15s; cursor: pointer; text-decoration: none; }
+    .btn-primary:hover { background: var(--amber-hover); transform: translateY(-1px); }
+
+    .badge { background: var(--amber-light); color: #92400e; border-radius: 999px; font-size: 0.8rem; font-weight: 600; padding: 0.2rem 0.85rem; display: inline-block; }
+
+    .service-section { scroll-margin-top: 80px; }
+
+    .detail-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    .detail-card-header {
+      padding: 1.5rem 2rem;
+    }
+    .detail-card-body {
+      padding: 1.5rem 2rem 2rem;
+    }
+
+    .skill-pill {
+      background: var(--blue-light);
+      color: var(--blue-deep);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      display: inline-block;
+      margin: 0.15rem;
+    }
+
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-amber-400 text-slate-900 px-4 py-2 rounded font-bold z-50">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 shadow-md" style="background: var(--blue-deep);">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-0 flex items-center justify-between h-16" aria-label="Main navigation">
+      <a href="index.html" class="flex items-center gap-2 text-white no-underline" aria-label="Best Life Steps home">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <rect x="2" y="22" width="10" height="12" rx="2" fill="#fbbf24"/>
+          <rect x="13" y="14" width="10" height="20" rx="2" fill="#60a5fa"/>
+          <rect x="24" y="6" width="10" height="28" rx="2" fill="#fbbf24"/>
+        </svg>
+        <span style="font-family:'Figtree',sans-serif; font-weight:800; font-size:1.15rem; line-height:1.2;">
+          Best Life<br><span style="color:#fbbf24;">Steps</span>
+        </span>
+      </a>
+      <ul class="hidden md:flex items-center gap-6 list-none m-0 p-0">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link active" aria-current="page">Services</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="hidden md:inline-block btn-primary text-sm">Get Started</a>
+      <button id="hamburger-btn" class="md:hidden text-white p-2 rounded focus:outline-none focus:ring-2 focus:ring-amber-400" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg id="icon-open" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="icon-close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="hidden"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </nav>
+    <div id="mobile-menu" style="background: var(--blue-deep);">
+      <ul class="list-none m-0 p-0 px-4 pb-4 flex flex-col gap-1">
+        <li><a href="index.html" class="nav-link block py-2 border-b border-blue-900 text-base">Home</a></li>
+        <li><a href="services.html" class="nav-link block py-2 border-b border-blue-900 text-base" aria-current="page">Services</a></li>
+        <li><a href="about.html" class="nav-link block py-2 border-b border-blue-900 text-base">About</a></li>
+        <li><a href="contact.html" class="nav-link block py-2 text-base">Contact</a></li>
+        <li class="mt-3"><a href="contact.html" class="btn-primary text-sm w-full text-center block">Get Started</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section aria-label="Page hero" style="background: linear-gradient(135deg, #1a4f8c 0%, #1e40af 100%);" class="py-16 md:py-20">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <span class="badge mb-4">What We Offer</span>
+        <h1 class="text-white text-4xl md:text-5xl font-extrabold mb-4">Our Services</h1>
+        <p class="text-blue-100 text-lg leading-relaxed">Individualized, evidence-based support delivered in-home, in the community, or via telehealth — wherever it's most meaningful for you.</p>
+        <!-- Jump links -->
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+          <a href="#executive-functioning" class="bg-white bg-opacity-15 hover:bg-opacity-25 text-white text-sm font-medium px-4 py-2 rounded-full transition-colors">Executive Functioning</a>
+          <a href="#social-skills" class="bg-white bg-opacity-15 hover:bg-opacity-25 text-white text-sm font-medium px-4 py-2 rounded-full transition-colors">Social Skills</a>
+          <a href="#independence" class="bg-white bg-opacity-15 hover:bg-opacity-25 text-white text-sm font-medium px-4 py-2 rounded-full transition-colors">Life Skills</a>
+          <a href="#family-consultation" class="bg-white bg-opacity-15 hover:bg-opacity-25 text-white text-sm font-medium px-4 py-2 rounded-full transition-colors">Family Consultation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEUROAFFIRMING STATEMENT -->
+    <section class="py-12 bg-amber-50 border-y border-amber-100" aria-label="Our philosophy">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center gap-6">
+        <div class="flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center" style="background: var(--amber);">
+          <svg width="32" height="32" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold mb-1" style="font-family:'Figtree',sans-serif; color: var(--blue-deep);">Neuroaffirming &amp; Inclusive Services</h2>
+          <p class="text-slate-600 leading-relaxed text-sm">While not all of our clients have ADHD or are autistic, we support many who are. Our neuroaffirming services respect and celebrate neurodiversity while addressing the real challenges individuals face. We specialize in executive function challenges common for neurodivergent individuals, always centering the person's strengths, identity, and autonomy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICE 1: Executive Functioning ===== -->
+    <section id="executive-functioning" class="service-section py-20 bg-white" aria-labelledby="ef-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--blue-light);">
+                <svg width="26" height="26" fill="none" stroke="#1a4f8c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+              </div>
+              <span class="badge">Service 1 of 4</span>
+            </div>
+            <h2 id="ef-heading" class="text-3xl font-extrabold mb-4" style="color: var(--blue-deep);">Executive Functioning Tutoring</h2>
+            <p class="text-slate-600 leading-relaxed mb-5">Our executive functioning coaching focuses on building the mental skills people use every day to get things done. We work with individuals to develop practical systems and routines that increase independence and reduce daily stress in school, work, and home settings.</p>
+            <p class="text-slate-600 leading-relaxed mb-6">Sessions are practical and skill-based, using behavior skills training and systematic prompt fading to teach strategies in the environments where they're most needed. Goals are always individualized and driven by what matters most to the client.</p>
+            <a href="contact.html" class="btn-primary">Request This Service</a>
+          </div>
+          <div class="detail-card">
+            <div class="detail-card-header" style="background: var(--blue-light); border-bottom: 1px solid #dbeafe;">
+              <h3 class="font-bold text-base" style="font-family:'Figtree',sans-serif; color: var(--blue-deep);">Skills We Address</h3>
+            </div>
+            <div class="detail-card-body">
+              <div class="flex flex-wrap gap-1">
+                <span class="skill-pill">Planning &amp; Organization</span>
+                <span class="skill-pill">Time Management</span>
+                <span class="skill-pill">Task Initiation</span>
+                <span class="skill-pill">Problem Solving</span>
+                <span class="skill-pill">Cognitive Flexibility</span>
+                <span class="skill-pill">Impulse Control</span>
+                <span class="skill-pill">Working Memory</span>
+                <span class="skill-pill">Self-Monitoring</span>
+                <span class="skill-pill">Emotional Regulation</span>
+                <span class="skill-pill">Goal Setting</span>
+                <span class="skill-pill">Routines &amp; Systems</span>
+              </div>
+              <div class="mt-6 p-4 rounded-lg" style="background: #f0fdf4; border-left: 4px solid #16a34a;">
+                <p class="text-sm text-green-800"><strong>Delivery:</strong> In-home, community settings, or telehealth. Individualized session frequency based on goals and needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICE 2: Social Skills ===== -->
+    <section id="social-skills" class="service-section py-20" style="background: var(--blue-light);" aria-labelledby="ss-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div class="detail-card lg:order-1">
+            <div class="detail-card-header" style="background: #eff6ff; border-bottom: 1px solid #dbeafe;">
+              <h3 class="font-bold text-base" style="font-family:'Figtree',sans-serif; color: var(--blue-deep);">What We Teach</h3>
+            </div>
+            <div class="detail-card-body">
+              <div class="flex flex-wrap gap-1">
+                <span class="skill-pill">Conversation Skills</span>
+                <span class="skill-pill">Friendship Building</span>
+                <span class="skill-pill">Reading Social Cues</span>
+                <span class="skill-pill">Conflict Resolution</span>
+                <span class="skill-pill">Peer Interactions</span>
+                <span class="skill-pill">Dating &amp; Relationships</span>
+                <span class="skill-pill">Active Listening</span>
+                <span class="skill-pill">Perspective-Taking</span>
+                <span class="skill-pill">Group Social Skills</span>
+                <span class="skill-pill">Online Communication</span>
+              </div>
+              <div class="mt-6 p-4 rounded-lg border border-blue-200" style="background: #dbeafe;">
+                <p class="text-sm text-blue-800"><strong>Featured Program:</strong> UCLA PEERS® — an evidence-based social skills program for adolescents and young adults. Structured curriculum with parent/caregiver coaching component.</p>
+              </div>
+            </div>
+          </div>
+          <div class="lg:order-2">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: #dbeafe;">
+                <svg width="26" height="26" fill="none" stroke="#1a4f8c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              </div>
+              <span class="badge">Service 2 of 4</span>
+            </div>
+            <h2 id="ss-heading" class="text-3xl font-extrabold mb-4" style="color: var(--blue-deep);">Social Skills &amp; Relationship Development</h2>
+            <p class="text-slate-600 leading-relaxed mb-5">Meaningful friendships, workplace relationships, and romantic connections are central to a fulfilling life. We teach the "soft skills" that help individuals navigate social situations with confidence — from starting a conversation to maintaining a long-term friendship.</p>
+            <p class="text-slate-600 leading-relaxed mb-6">We offer the evidence-based UCLA PEERS® program as well as individualized coaching tailored to each person's specific social goals. Coaching is available individually or in small groups, and includes parent/caregiver coaching when appropriate.</p>
+            <a href="contact.html" class="btn-primary">Request This Service</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICE 3: Independence ===== -->
+    <section id="independence" class="service-section py-20 bg-white" aria-labelledby="ind-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--amber-light);">
+                <svg width="26" height="26" fill="none" stroke="#92400e" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <span class="badge">Service 3 of 4</span>
+            </div>
+            <h2 id="ind-heading" class="text-3xl font-extrabold mb-4" style="color: var(--blue-deep);">Independence in Community, Career &amp; Life Skills</h2>
+            <p class="text-slate-600 leading-relaxed mb-5">Our life skills services are designed to help individuals build greater independence through the use of behavior skills training and systematic prompt fading. We teach adaptive and functional skills in real-world settings — home, school, work, and the community — so that skills translate to where they're needed most.</p>
+            <p class="text-slate-600 leading-relaxed mb-6">We focus on career readiness and job coaching, helping individuals prepare for and succeed in work environments. Community integration is a core goal: using public transportation, shopping, navigating community resources, and participating in leisure activities are all within scope.</p>
+            <a href="contact.html" class="btn-primary">Request This Service</a>
+          </div>
+          <div class="detail-card">
+            <div class="detail-card-header" style="background: var(--amber-light); border-bottom: 1px solid #fde68a;">
+              <h3 class="font-bold text-base" style="font-family:'Figtree',sans-serif; color: #92400e;">Areas We Cover</h3>
+            </div>
+            <div class="detail-card-body">
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-bold text-xs uppercase tracking-wide text-slate-400 mb-2" style="font-family:'Figtree',sans-serif;">Daily Living</h4>
+                  <ul class="text-sm text-slate-600 space-y-1 list-none p-0 m-0">
+                    <li class="flex items-center gap-1.5"><span style="color:var(--amber);">&#10003;</span> Daily routines</li>
+                    <li class="flex items-center gap-1.5"><span style="color:var(--amber);">&#10003;</span> Meal prep &amp; nutrition</li>
+                    <li class="flex items-center gap-1.5"><span style="color:var(--amber);">&#10003;</span> Home management</li>
+                    <li class="flex items-center gap-1.5"><span style="color:var(--amber);">&#10003;</span> Personal hygiene</li>
+                    <li class="flex items-center gap-1.5"><span style="color:var(--amber);">&#10003;</span> Money management</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs uppercase tracking-wide text-slate-400 mb-2" style="font-family:'Figtree',sans-serif;">Career &amp; Community</h4>
+                  <ul class="text-sm text-slate-600 space-y-1 list-none p-0 m-0">
+                    <li class="flex items-center gap-1.5"><span style="color:var(--blue-mid);">&#10003;</span> Job readiness</li>
+                    <li class="flex items-center gap-1.5"><span style="color:var(--blue-mid);">&#10003;</span> Workplace skills</li>
+                    <li class="flex items-center gap-1.5"><span style="color:var(--blue-mid);">&#10003;</span> Community navigation</li>
+                    <li class="flex items-center gap-1.5"><span style="color:var(--blue-mid);">&#10003;</span> Leisure &amp; recreation</li>
+                    <li class="flex items-center gap-1.5"><span style="color:var(--blue-mid);">&#10003;</span> Health &amp; wellness</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-6 p-4 rounded-lg" style="background: #f0fdf4; border-left: 4px solid #16a34a;">
+                <p class="text-sm text-green-800"><strong>Approach:</strong> Behavior skills training with systematic prompt fading ensures skills are learned to independence, not dependence on supports.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICE 4: Family Consultation ===== -->
+    <section id="family-consultation" class="service-section py-20" style="background: var(--blue-light);" aria-labelledby="fc-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div class="detail-card lg:order-1">
+            <div class="detail-card-header" style="background: #eff6ff; border-bottom: 1px solid #dbeafe;">
+              <h3 class="font-bold text-base" style="font-family:'Figtree',sans-serif; color: var(--blue-deep);">What's Included</h3>
+            </div>
+            <div class="detail-card-body">
+              <ul class="space-y-3 list-none p-0 m-0">
+                <li class="flex items-start gap-3">
+                  <div class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5" style="background: var(--blue-light);">
+                    <svg width="14" height="14" fill="none" stroke="#1a4f8c" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-sm" style="font-family:'Figtree',sans-serif; color: var(--blue-deep);">Caregiver Coaching</p>
+                    <p class="text-slate-500 text-sm">Strategies and tools to support your loved one at home and in the community</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5" style="background: var(--blue-light);">
+                    <svg width="14" height="14" fill="none" stroke="#1a4f8c" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-sm" style="font-family:'Figtree',sans-serif; color: var(--blue-deep);">Family Consultation</p>
+                    <p class="text-slate-500 text-sm">Collaborative goal-setting and planning to support the whole family system</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5" style="background: var(--blue-light);">
+                    <svg width="14" height="14" fill="none" stroke="#1a4f8c" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-sm" style="font-family:'Figtree',sans-serif; color: var(--blue-deep);">Team Training &amp; Supervision</p>
+                    <p class="text-slate-500 text-sm">Training for support teams, staff, or Independent Facilitators</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5" style="background: var(--blue-light);">
+                    <svg width="14" height="14" fill="none" stroke="#1a4f8c" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-sm" style="font-family:'Figtree',sans-serif; color: var(--blue-deep);">Behavior Support Plans</p>
+                    <p class="text-slate-500 text-sm">Individualized behavior plans for mild to moderate behavior challenges, as needed</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="lg:order-2">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--amber-light);">
+                <svg width="26" height="26" fill="none" stroke="#92400e" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              </div>
+              <span class="badge">Service 4 of 4</span>
+            </div>
+            <h2 id="fc-heading" class="text-3xl font-extrabold mb-4" style="color: var(--blue-deep);">Family &amp; Caregiver Consultation for Behavior Support</h2>
+            <p class="text-slate-600 leading-relaxed mb-5">Families and caregivers are crucial partners in the success of the individuals we support. We offer consultation and coaching to help families understand and implement strategies at home, and to ensure consistency across environments.</p>
+            <p class="text-slate-600 leading-relaxed mb-6">We also provide team training and supervision for Independent Facilitators and support staff, and can develop individualized behavior support plans when needed. All behavior support is grounded in compassion and respect for the individual.</p>
+            <a href="contact.html" class="btn-primary">Request This Service</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DELIVERY METHODS -->
+    <section class="py-16 bg-white" aria-labelledby="delivery-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <h2 id="delivery-heading" class="text-2xl font-bold mb-2" style="color: var(--blue-deep);">How Services Are Delivered</h2>
+          <p class="text-slate-500">We meet clients where they are — literally.</p>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div class="text-center p-6 rounded-xl border border-slate-100 bg-slate-50">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--blue-light);">
+              <svg width="26" height="26" fill="none" stroke="#1a4f8c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            </div>
+            <h3 class="font-bold mb-1" style="font-family:'Figtree',sans-serif; color: var(--blue-deep);">In-Home</h3>
+            <p class="text-slate-500 text-sm">Sessions take place in the comfort and context of home, where many skills are most relevant.</p>
+          </div>
+          <div class="text-center p-6 rounded-xl border border-slate-100 bg-slate-50">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--blue-light);">
+              <svg width="26" height="26" fill="none" stroke="#1a4f8c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h3 class="font-bold mb-1" style="font-family:'Figtree',sans-serif; color: var(--blue-deep);">In Community</h3>
+            <p class="text-slate-500 text-sm">We go to stores, parks, workplaces, and other community settings to practice real-world skills.</p>
+          </div>
+          <div class="text-center p-6 rounded-xl border border-slate-100 bg-slate-50">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--amber-light);">
+              <svg width="26" height="26" fill="none" stroke="#92400e" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-bold mb-1" style="font-family:'Figtree',sans-serif; color: var(--blue-deep);">Telehealth</h3>
+            <p class="text-slate-500 text-sm">Remote sessions available when appropriate, offering flexibility for families across the region.</p>
+          </div>
+        </div>
+        <p class="text-center text-slate-500 text-sm mt-6">Primarily serving <strong>North County San Diego</strong> and surrounding areas.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background: linear-gradient(135deg, #1a4f8c, #1d4ed8);" class="py-16" aria-labelledby="cta-heading">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <h2 id="cta-heading" class="text-3xl font-extrabold text-white mb-4" style="font-family:'Figtree',sans-serif;">Let's Find the Right Fit for You</h2>
+        <p class="text-blue-100 text-lg mb-8">Contact us to discuss your goals and learn how we can help. We'd love to connect.</p>
+        <a href="contact.html" class="btn-primary text-base px-8 py-4">Contact Us Today</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background: #0f2044;" class="text-white pt-14 pb-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white border-opacity-10">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <svg width="30" height="30" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect x="2" y="22" width="10" height="12" rx="2" fill="#fbbf24"/>
+            <rect x="13" y="14" width="10" height="20" rx="2" fill="#60a5fa"/>
+            <rect x="24" y="6" width="10" height="28" rx="2" fill="#fbbf24"/>
+          </svg>
+          <span style="font-family:'Figtree',sans-serif; font-weight:800;">Best Life Steps, LLC</span>
+        </div>
+        <p class="text-slate-300 text-sm leading-relaxed">Evidence-based support for individuals with special needs — building independence, confidence, and a life they love.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-sm uppercase tracking-wide text-slate-400 mb-4" style="font-family:'Figtree',sans-serif;">Quick Links</h3>
+        <ul class="list-none m-0 p-0 space-y-2">
+          <li><a href="index.html" class="text-slate-300 hover:text-amber-400 text-sm transition-colors">Home</a></li>
+          <li><a href="services.html" class="text-slate-300 hover:text-amber-400 text-sm transition-colors">Services</a></li>
+          <li><a href="about.html" class="text-slate-300 hover:text-amber-400 text-sm transition-colors">About</a></li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-amber-400 text-sm transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-sm uppercase tracking-wide text-slate-400 mb-4" style="font-family:'Figtree',sans-serif;">Services</h3>
+        <ul class="list-none m-0 p-0 space-y-2">
+          <li><a href="#executive-functioning" class="text-slate-300 hover:text-amber-400 text-sm transition-colors">Executive Functioning</a></li>
+          <li><a href="#social-skills" class="text-slate-300 hover:text-amber-400 text-sm transition-colors">Social Skills Coaching</a></li>
+          <li><a href="#independence" class="text-slate-300 hover:text-amber-400 text-sm transition-colors">Life Skills &amp; Independence</a></li>
+          <li><a href="#family-consultation" class="text-slate-300 hover:text-amber-400 text-sm transition-colors">Family Consultation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-sm uppercase tracking-wide text-slate-400 mb-4" style="font-family:'Figtree',sans-serif;">Contact</h3>
+        <ul class="list-none m-0 p-0 space-y-3 text-sm text-slate-300">
+          <li><a href="tel:8587699380" class="hover:text-amber-400 transition-colors">(858) 769-9380 (Office)</a></li>
+          <li><a href="tel:7608461380" class="hover:text-amber-400 transition-colors">(760) 846-1380 (Mobile)</a></li>
+          <li><a href="mailto:BestLifeSteps@gmail.com" class="hover:text-amber-400 transition-colors">BestLifeSteps@gmail.com</a></li>
+          <li>North County San Diego</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 text-center text-slate-400 text-sm">
+      <p>&copy; <span id="year"></span> Best Life Steps, LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+    btn.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      iconOpen.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
+    });
+  </script>
+</body>
+</html>
